@@ -23,7 +23,7 @@ function removeAllChildren(element) {
     '{userName}さんにおすすめの本は『ぼくらの七日間戦争（なのかかんせんそう）』です。まじめな{userName}さんですが、たまにはおもしろいイタズラを考えてみてはどうでしょう？',
     '{userName}さんにおすすめの本は『空想科学読本（くうそうかがくどくほん）』です。理科が得意な{userName}さんなら、じっくり読んで楽しめると思います。',
     '{userName}さんにおすすめの本は『ギネス世界記録（せかいきろく）』です。爆発的な潜在能力を秘めた{userName}さんなら、未来のギネス世界記録保持者になれるかも。',
-    '{userName}さんにおすすめの本は『ブラックジャック』です。冷静沈着ですが心の底に熱いものを秘めている{userName}さんにおすすめのまんがです。、',
+    '{userName}さんにおすすめの本は『ブラックジャック』です。冷静沈着ですが心の底に熱いものを秘めている{userName}さんにおすすめのまんがです。',
     '{userName}さんにおすすめの本は『赤毛（あかげ）のアン』です。実は乙女チックなところがある{userName}さん。物語の世界観がきっと気に入ると思います。',
     '{userName}さんにおすすめの本は『西遊記（さいゆうき）』です。誰かを守りたい強いハートをもつ{userName}さんは孫悟空に共感できるのでは？',
     '{userName}さんにおすすめの本は『小公女（しょうこうじょ）』です。ドラマチックなことが大好きな{userName}さんには、不幸に耐えて最後には大きな幸せを手に入れるセーラのお話がおすすめです。',
@@ -77,12 +77,12 @@ function appendTweetButton(element,message){
   const a =document.createElement('a');
   const href =
   'https://twitter.com/intent/tweet?button_hashtag='
-  + encodeURIComponent('あなたのいいところ')
+  + encodeURIComponent('あなたにおすすめの本')
   + '&ref_src=twsrc%5Etfw';
 a.setAttribute('href', href);
 a.className = 'twitter-hashtag-button';
 a.setAttribute('data-text', message);
-a.innerText = 'Tweet #あなたのいいところ';
+a.innerText = 'Tweet #あなたにおすすめの本';
 
 // aタグをHTMLとして追加する
 element.appendChild(a);
@@ -120,7 +120,7 @@ appendTweetButton(tweetDivided,result);
     };
   
     console.assert(
-      assessment('太郎') === '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
+      assessment('太郎') === '太郎さんにおすすめの本は『ブラックジャック』です。冷静沈着ですが心の底に熱いものを秘めている太郎さんにおすすめのまんがです。,
       '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
       );
 
